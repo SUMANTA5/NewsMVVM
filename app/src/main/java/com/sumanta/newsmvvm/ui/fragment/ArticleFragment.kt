@@ -6,8 +6,10 @@ import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.Snackbar
 import com.sumanta.newsmvvm.R
 import com.sumanta.newsmvvm.ui.NewsActivity
+import com.sumanta.newsmvvm.ui.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_article.*
 import kotlinx.android.synthetic.main.item_article_preview.*
 
@@ -26,6 +28,14 @@ class ArticleFragment: Fragment(R.layout.fragment_article) {
             webViewClient = WebViewClient()
             loadUrl(article.url)
         }
+
+
+        fab.setOnClickListener {
+            (viewModel as NewsViewModel).saveArticle(article)
+            Snackbar.make(view,"Article saved successfully", Snackbar.LENGTH_SHORT).show()
+
+        }
+
 
     }
 
