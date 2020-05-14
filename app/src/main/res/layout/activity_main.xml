@@ -33,6 +33,8 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         app:menu="@menu/bottom_navgation_menu"
+        android:background="#2B2C33"
+        app:itemHorizontalTranslationEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
